@@ -3,9 +3,14 @@ function Get-Nirsoft {
 
   mkdir \temp 
   cd \temp  
-  Invoke-WebRequest -Headers @{'Referer' = 'https://www.nirsoft.net/utils/web_browser_password.html'} -Uri https://www.nirsoft.net/toolsdownload/webbrowserpassview.zip  -OutFile wbpv.zip # this does not work idk why
+
+  Invoke-WebRequest -Headers @{
+      'Referer' = 'https://www.nirsoft.net/utils/web_browser_password.html'
+      'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+  } -Uri https://www.nirsoft.net/toolsdownload/webbrowserpassview.zip -OutFile wbpv.zip
+
   Invoke-WebRequest -Uri https://www.7-zip.org/a/7za920.zip -OutFile 7z.zip
-  Expand-Archive 7z.zip 
+  Expand-Archive 7z.zip
   .\7z\7za.exe e wbpv.zip
 
 }
